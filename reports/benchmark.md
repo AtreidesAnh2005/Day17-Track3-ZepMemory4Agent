@@ -5,22 +5,22 @@
 - Cases: **11**
 - Passed: **11/11**
 - Evidence hit rate: **100.0%**
-- Average retrieval latency: **806.2 ms**
+- Average retrieval latency: **930.6 ms**
 - Average token reduction vs full source context: **19.0%**
 
 | Case | Layer | Pass | Latency ms | Retrieved tokens | Token reduction | Missing / Error |
 | --- | --- | --- | ---: | ---: | ---: | --- |
 | E01 | short_term | PASS | 0.0 | 133 | 0.0% |  |
-| E06 | semantic | PASS | 296.1 | 56 | 87.8% |  |
-| E09 | long_term | PASS | 1320.4 | 841 | 0.0% |  |
+| E06 | semantic | PASS | 338.9 | 56 | 87.8% |  |
+| E09 | long_term | PASS | 1357.1 | 841 | 0.0% |  |
 | E10 | short_term | PASS | 0.2 | 195 | 0.0% |  |
-| E02 | long_term | PASS | 1331.6 | 1681 | 0.0% |  |
-| E03 | long_term | PASS | 1677.0 | 1612 | 0.0% |  |
-| E04 | episodic | PASS | 370.2 | 233 | 0.0% |  |
-| E05 | episodic | PASS | 328.5 | 252 | 0.0% |  |
-| E07 | mixed | PASS | 1759.4 | 392 | 30.6% |  |
-| E11 | semantic | PASS | 205.4 | 55 | 90.3% |  |
-| E08 | long_term | PASS | 1579.6 | 1475 | 0.0% |  |
+| E02 | long_term | PASS | 1690.7 | 1723 | 0.0% |  |
+| E03 | long_term | PASS | 1550.1 | 1665 | 0.0% |  |
+| E04 | episodic | PASS | 279.7 | 233 | 0.0% |  |
+| E05 | episodic | PASS | 305.3 | 252 | 0.0% |  |
+| E07 | mixed | PASS | 2428.4 | 392 | 30.6% |  |
+| E11 | semantic | PASS | 223.8 | 55 | 90.3% |  |
+| E08 | long_term | PASS | 2062.8 | 1536 | 0.0% |  |
 
 ## Evidence excerpts
 
@@ -42,23 +42,23 @@
 
 ### E02 - long_term
 
-`<USER_SUMMARY> Minh Nguyen is working on completing a benchmark report by Friday at 16:00 for an open-loop initiative named LAB-REPORT-1600. The user is debugging async HTTP requests and has increased the timeout to 60 seconds. The user is also checking the connection pool, client lifecycle, and concurrency. The user's effective approach involves reusing the aiohttp ClientSession and setting concurrency to 20, identifying connection churn as the primary issue rather than the timeout threshold, related to incident ASYNC-FIX-20.  Minh Nguyen likes Python and dislikes Java. When explaining code, the user prefers short examples. Their personal project is named ORCHID-27.  When explaining code, u`
+`<USER_SUMMARY> Minh Nguyen is working on completing a benchmark report by Friday at 16:00 for an open-loop initiative named LAB-REPORT-1600. The user is debugging async HTTP requests and has increased the timeout to 60 seconds. The user is also checking the connection pool, client lifecycle, and concurrency. Minh's effective approach involves reusing the aiohttp ClientSession and setting concurrency to 20, identifying connection churn as the primary issue rather than the timeout threshold, related to incident ASYNC-FIX-20. For the company project BLUEBIRD-42, the backend must use TypeScript with NestJS, not Python.  Minh Nguyen likes Python and dislikes Java. When explaining code, the user p`
 
 ### E03 - long_term
 
-`<USER_SUMMARY> Minh Nguyen is working on completing a benchmark report by Friday at 16:00 for an open-loop initiative named LAB-REPORT-1600. The user is debugging async HTTP requests and has increased the timeout to 60 seconds. The user is also checking the connection pool, client lifecycle, and concurrency. The user's effective approach involves reusing the aiohttp ClientSession and setting concurrency to 20, identifying connection churn as the primary issue rather than the timeout threshold, related to incident ASYNC-FIX-20.  Minh Nguyen likes Python and dislikes Java. When explaining code, the user prefers short examples. Their personal project is named ORCHID-27.  When explaining code, u`
+`<USER_SUMMARY> Minh Nguyen is working on completing a benchmark report by Friday at 16:00 for an open-loop initiative named LAB-REPORT-1600. The user is debugging async HTTP requests and has increased the timeout to 60 seconds. The user is also checking the connection pool, client lifecycle, and concurrency. Minh's effective approach involves reusing the aiohttp ClientSession and setting concurrency to 20, identifying connection churn as the primary issue rather than the timeout threshold, related to incident ASYNC-FIX-20. For the company project BLUEBIRD-42, the backend must use TypeScript with NestJS, not Python.  Minh Nguyen likes Python and dislikes Java. When explaining code, the user p`
 
 ### E04 - episodic
 
-`EPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan. EPISODE: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600. EPISODE: Cap nhat moi: voi du an cong ty BLUEBIRD-42, backend bat buoc dung TypeScript voi NestJS; khong dung Python cho backend du an nay. Preference Python van dung cho demo ca nhan ORCHI EPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20. EPISODE: Toi dang hoc async/await va hay nham coroutine voi Task. Neu sau nay gap chu de nay, hay giai thi`
+`EPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan. EPISODE: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600. EPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20. EPISODE: Cap nhat moi: voi du an cong ty BLUEBIRD-42, backend bat buoc dung TypeScript voi NestJS; khong dung Python cho backend du an nay. Preference Python van dung cho demo ca nhan ORCHI EPISODE: Toi dang hoc async/await va hay nham coroutine voi Task. Neu sau nay gap chu de nay, hay giai thi`
 
 ### E05 - episodic
 
-`EPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan. EPISODE: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600. EPISODE: Cap nhat moi: voi du an cong ty BLUEBIRD-42, backend bat buoc dung TypeScript voi NestJS; khong dung Python cho backend du an nay. Preference Python van dung cho demo ca nhan ORCHI EPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20. EPISODE: Toi dang hoc async/await va hay nham coroutine voi Task. Neu sau nay gap chu de nay, hay giai thi`
+`EPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan. EPISODE: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600. EPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20. EPISODE: Cap nhat moi: voi du an cong ty BLUEBIRD-42, backend bat buoc dung TypeScript voi NestJS; khong dung Python cho backend du an nay. Preference Python van dung cho demo ca nhan ORCHI EPISODE: Toi dang hoc async/await va hay nham coroutine voi Task. Neu sau nay gap chu de nay, hay giai thi`
 
 ### E07 - mixed
 
-`<LONG_TERM> <USER_SUMMARY> Minh Nguyen is working on completing a benchmark report by Friday at 16:00 for an open-loop initiative named LAB-REPORT-1600. The user is debugging async HTTP requests and has increased the timeout to 60 seconds. The user is also checking the connection pool, client lifecycle, and concurrency. The user's effective approach involves reusing the aiohttp ClientSession and setting concurrency to 20, identifying connection churn as the primary issue rather than the timeout threshold, related to incident ASYNC-FIX-20.  Minh Nguyen likes Python and dislikes Java. When explaining code, the user prefers short examples. Their personal project is named ORCHID-27.  When explai`
+`<LONG_TERM> <USER_SUMMARY> Minh Nguyen is working on completing a benchmark report by Friday at 16:00 for an open-loop initiative named LAB-REPORT-1600. The user is debugging async HTTP requests and has increased the timeout to 60 seconds. The user is also checking the connection pool, client lifecycle, and concurrency. Minh's effective approach involves reusing the aiohttp ClientSession and setting concurrency to 20, identifying connection churn as the primary issue rather than the timeout threshold, related to incident ASYNC-FIX-20. For the company project BLUEBIRD-42, the backend must use TypeScript with NestJS, not Python.  Minh Nguyen likes Python and dislikes Java. When explaining code`
 
 ### E11 - semantic
 
@@ -66,4 +66,4 @@
 
 ### E08 - long_term
 
-`<USER_SUMMARY> Minh Nguyen is working on completing a benchmark report by Friday at 16:00 for an open-loop initiative named LAB-REPORT-1600. The user is debugging async HTTP requests and has increased the timeout to 60 seconds. The user is also checking the connection pool, client lifecycle, and concurrency. The user's effective approach involves reusing the aiohttp ClientSession and setting concurrency to 20, identifying connection churn as the primary issue rather than the timeout threshold, related to incident ASYNC-FIX-20.  Minh Nguyen likes Python and dislikes Java. When explaining code, the user prefers short examples. Their personal project is named ORCHID-27.  When explaining code, u`
+`<USER_SUMMARY> Minh Nguyen is working on completing a benchmark report by Friday at 16:00 for an open-loop initiative named LAB-REPORT-1600. The user is debugging async HTTP requests and has increased the timeout to 60 seconds. The user is also checking the connection pool, client lifecycle, and concurrency. Minh's effective approach involves reusing the aiohttp ClientSession and setting concurrency to 20, identifying connection churn as the primary issue rather than the timeout threshold, related to incident ASYNC-FIX-20. For the company project BLUEBIRD-42, the backend must use TypeScript with NestJS, not Python.  Minh Nguyen likes Python and dislikes Java. When explaining code, the user p`
