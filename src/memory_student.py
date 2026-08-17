@@ -51,7 +51,13 @@ class StudentMemory:
         # Tip: verbose session episodes can crowd out concise, marker-bearing
         # reflections under the tight episodic budget — render_graph_search
         # accepts an `episode_char_cap` to keep more distinct episodes.
-        raise NotImplementedError("LAB TODO: implement episodic search")
+        results = self.client.graph.search(
+            user_id=user_id,
+            query=cap_query(query),
+            scope="episodes",
+            limit=15,
+        )
+        return render_graph_search(results, episode_char_cap=180)
 
     def retrieve_semantic(self, graph_id: str, query: str) -> str:
         # LAB TODO 3/4
@@ -60,7 +66,22 @@ class StudentMemory:
         # literal markers (e.g. PAYMENT-RULE-3). The "auto" scope returns
         # extracted facts that DROP those literal codes, so avoid it here.
         # Fallback: scope="nodes".
-        raise NotImplementedError("LAB TODO: implement semantic graph search")
+        q = cap_query(query)
+        try:
+            results = self.client.graph.search(
+                graph_id=graph_id,
+                query=q,
+                scope="episodes",
+                limit=8,
+            )
+        except Exception:
+            results = self.client.graph.search(
+                graph_id=graph_id,
+                query=q,
+                scope="nodes",
+                limit=8,
+            )
+        return render_graph_search(results)
 
     def assemble_context(self, layers: dict[str, str]) -> tuple[str, dict[str, dict[str, int]]]:
         # LAB TODO 4/4

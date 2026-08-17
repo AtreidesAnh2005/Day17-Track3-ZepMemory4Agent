@@ -12,4 +12,16 @@
 - Bo sung `graph.search(scope="edges", limit=20)` de lay them cac fact kem `valid_at`/`invalid_at`, giup case recency/conflict (E08) phan biet duoc fact cu (Python cho `ORCHID-27`) va fact hien tai (TypeScript/NestJS cho `BLUEBIRD-42`) thay vi chi dua vao Context Block tom tat.
 - Ket qua practice: E02 (Python preference), E03 (open loop `benchmark report` 16:00), E08 (recency BLUEBIRD-42/TypeScript/NestJS), E09 (user isolation — Lan chi thay LOTUS-88/Java/Spring Boot, khong leak ORCHID-27 cua Minh) deu PASS.
 
-<!-- Cac muc con lai (Pha C-E, privacy, phan tich benchmark) se duoc bo sung sau khi hoan thanh cac pha tiep theo. -->
+## Pha C — Episodic memory
+
+- `retrieve_episodic` goi `graph.search(user_id=..., scope="episodes", limit=15)` — tim theo `user_id` (khong phai `graph_id` semantic) vi day la trai nghiem/trajectory rieng cua tung user.
+- `render_graph_search(..., episode_char_cap=180)`: gioi han do dai moi episode de nhieu episode ngan, giau marker (vi du reflection) khong bi 1-2 episode dai chiem het budget.
+- Ket qua: E04 (trajectory fix async timeout: `ClientSession`, `concurrency=20`, `ASYNC-FIX-20`) va E05 (reflection: `connection churn` khong phai `timeout threshold`) deu PASS.
+
+## Pha D — Semantic memory (standalone graph)
+
+- `retrieve_semantic` tim tren `graph_id` (domain KB dung chung, khong gan voi user nao) thay vi `user_id`.
+- Dung `scope="episodes"` de giu nguyen marker literal trong raw document (`PAYMENT-RULE-3`, `CONN-POOL-FIRST`...). Neu dung `scope="auto"` se chi ra extracted facts va mat cac ma nay. Co fallback sang `scope="nodes"` neu `episodes` loi.
+- Ket qua: E06 (payment retry: `Idempotency-Key`, `max-3-retries`, `exponential-backoff`) va E11 (incident playbook: `connection pooling`, `CONN-POOL-FIRST`) deu PASS.
+
+<!-- Cac muc con lai (Pha E, privacy, phan tich benchmark) se duoc bo sung sau khi hoan thanh cac pha tiep theo. -->
