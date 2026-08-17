@@ -5,22 +5,22 @@
 - Cases: **11**
 - Passed: **11/11**
 - Evidence hit rate: **100.0%**
-- Average retrieval latency: **847.4 ms**
+- Average retrieval latency: **707.3 ms**
 - Average token reduction vs full source context: **14.2%**
 
 | Case | Layer | Pass | Latency ms | Retrieved tokens | Token reduction | Missing / Error |
 | --- | --- | --- | ---: | ---: | ---: | --- |
 | E01 | short_term | PASS | 0.0 | 133 | 0.0% |  |
-| E06 | semantic | PASS | 912.8 | 148 | 67.8% |  |
-| E09 | long_term | PASS | 1399.7 | 721 | 0.0% |  |
-| E10 | short_term | PASS | 0.2 | 195 | 0.0% |  |
-| E02 | long_term | PASS | 1431.5 | 1373 | 0.0% |  |
-| E03 | long_term | PASS | 1763.3 | 1376 | 0.0% |  |
-| E04 | episodic | PASS | 251.5 | 247 | 0.0% |  |
-| E05 | episodic | PASS | 225.4 | 266 | 0.0% |  |
-| E07 | mixed | PASS | 1668.3 | 485 | 14.2% |  |
-| E11 | semantic | PASS | 479.6 | 146 | 74.2% |  |
-| E08 | long_term | PASS | 1189.0 | 1323 | 0.0% |  |
+| E06 | semantic | PASS | 455.2 | 148 | 67.8% |  |
+| E09 | long_term | PASS | 1321.8 | 724 | 0.0% |  |
+| E10 | short_term | PASS | 0.5 | 195 | 0.0% |  |
+| E02 | long_term | PASS | 1344.5 | 1365 | 0.0% |  |
+| E03 | long_term | PASS | 1165.7 | 1368 | 0.0% |  |
+| E04 | episodic | PASS | 231.6 | 233 | 0.0% |  |
+| E05 | episodic | PASS | 239.0 | 252 | 0.0% |  |
+| E07 | mixed | PASS | 1671.1 | 485 | 14.2% |  |
+| E11 | semantic | PASS | 216.8 | 146 | 74.2% |  |
+| E08 | long_term | PASS | 1134.4 | 1323 | 0.0% |  |
 
 ## Evidence excerpts
 
@@ -50,11 +50,11 @@
 
 ### E04 - episodic
 
-`EPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan. EPISODE: Toi dang hoc async/await va hay nham coroutine voi Task. Neu sau nay gap chu de nay, hay giai thich bang timeline. EPISODE: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600. EPISODE: Hom nay toi debug async HTTP. Toi da thu tang timeout len 60s nhung van fail. EPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20. EPISODE: Da ghi nhan trajectory: increase timeout khong hieu qua; ClientSession + con`
+`EPISODE: Da ghi nhan trajectory: increase timeout khong hieu qua; ClientSession + concurrency=20 giai quyet connection churn. EPISODE: Cap nhat moi: voi du an cong ty BLUEBIRD-42, backend bat buoc dung TypeScript voi NestJS; khong dung Python cho backend du an nay. Preference Python van dung cho demo ca nhan ORCHI EPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan. EPISODE: Toi dang hoc async/await va hay nham coroutine voi Task. Neu sau nay gap chu de nay, hay giai thich bang timeline. EPISODE: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600. EPISODE: Hom nay toi debug as`
 
 ### E05 - episodic
 
-`EPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan. EPISODE: Toi dang hoc async/await va hay nham coroutine voi Task. Neu sau nay gap chu de nay, hay giai thich bang timeline. EPISODE: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600. EPISODE: Hom nay toi debug async HTTP. Toi da thu tang timeout len 60s nhung van fail. EPISODE: Hay kiem tra connection pool, lifecycle cua client va concurrency. EPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20. EPISODE: `
+`EPISODE: Da ghi nhan trajectory: increase timeout khong hieu qua; ClientSession + concurrency=20 giai quyet connection churn. EPISODE: Cap nhat moi: voi du an cong ty BLUEBIRD-42, backend bat buoc dung TypeScript voi NestJS; khong dung Python cho backend du an nay. Preference Python van dung cho demo ca nhan ORCHI EPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan. EPISODE: Toi dang hoc async/await va hay nham coroutine voi Task. Neu sau nay gap chu de nay, hay giai thich bang timeline. EPISODE: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600. EPISODE: Hom nay toi debug as`
 
 ### E07 - mixed
 

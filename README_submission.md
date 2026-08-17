@@ -20,6 +20,8 @@
 - **E08:** Context Block + `graph.search(scope="edges")` phan biet fact cu (Python cho ORCHID-27) va fact hien tai (TypeScript/NestJS cho BLUEBIRD-42) nho recency+scope.
 - **E10:** giam `max_recent_messages` 6→4 khong lam mat `REVIEW-DEADLINE-1600` vi `sliding`/`summary` tach no vao `DURABLE_NOTES`, doc lap voi cua so recent turns bi cat.
 
-## 4. Ket qua benchmark
+## 4. Ket qua benchmark va privacy
 
 Practice: **11/11 PASS (100%)**. No-memory baseline: **2/11 (18.2%)**. Chi tiet: `reports/benchmark.md`, `reports/benchmark_no_memory.md`, `reports/comparison.md`.
+
+Privacy drill: chay `src.forget --user-id minh-lab17` sau khi luu benchmark, `--verify-only` xac nhan `Zep user absent: True` va `Redis user keys remaining: 0`; da seed lai truoc golden. Log: `submission/*.log`.
